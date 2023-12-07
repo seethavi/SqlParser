@@ -1,6 +1,0 @@
-@startuml
-class ClassA <<Table>> {
-    int a
-    String b
-}
-@enduml
