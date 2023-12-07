@@ -1,0 +1,28 @@
+@startUml
+class customers <<table>> {
+	address VARCHAR2(120)
+	name VARCHAR2(50)
+	id NUMBER
+	salary integer
+	age integer
+}
+
+package /Users/vijay/Projects/SqlParser/plsql/input/CustomerSalary.pkb  {
+class cust_sal  {
+	void find_sal(c_id NUMBER)
+}
+}
+
+package /Users/vijay/Projects/SqlParser/plsql/input/Customer.pkb  {
+class customer  {
+	void addCustomer(c_id NUMBER, c_name VARCHAR2(50), c_age integer, c_addr VARCHAR2(120), c_sal integer)
+	void delCustomer(c_id NUMBER)
+	void listCustomer()
+}
+}
+
+cust_sal  --  customers : Select
+customer  --  customers : Insert
+customer  --  customers : Delete
+customer  --  customers : Select
+@endUml
